@@ -1,0 +1,15 @@
+{
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": false,
+  "editor.tabSize": 2,
+  "editor.stickyTabStops": true,
+  "notebook.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.formatOnType": true,
+  "eslint.format.enable": true,
+  "volar.format.initialIndent": {
+    "typescript": true,
+    "html": true
+  }
+}

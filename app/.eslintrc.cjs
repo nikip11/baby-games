@@ -3,30 +3,31 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
-    "extends": [
-        "standard-with-typescript",
-        "plugin:vue/vue3-essential"
-    ],
-    "overrides": [
+    extends: [
+        "plugin:vue/vue3-essential",
+        "eslint:recommended",
+        "@vue/typescript/recommended",
+        "@vue/prettier",
+        "@vue/prettier/@typescript-eslint",
+        ],
+        parserOptions: {
+        ecmaVersion: 2020,
+        },
+        rules: {
+        "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
+        "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+        "arrow-parens": "off",
+        "eol-last": "error",
+        },
+        overrides: [
         {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
+            files: [
+            "**/__tests__/*.{j,t}s?(x)",
+            "**/tests/unit/**/*.spec.{j,t}s?(x)",
             ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+            env: {
+            jest: true,
+            },
+        },
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "vue"
-    ],
-    "rules": {
-    }
 }

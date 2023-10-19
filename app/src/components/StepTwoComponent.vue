@@ -4,11 +4,12 @@
     <h1 v-if="count === 2">Listos</h1>
     <h1 v-if="count === 1">Ya</h1>
     <h1>{{ count }}</h1>
+    <button @click="startCounter" v-if="count !== 3">si</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onActivated, onMounted, onRenderTracked, onUpdated, ref, toRefs, watch } from 'vue'
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps<{show: boolean}>()
 const { show } = toRefs({show: props.show})
@@ -22,24 +23,6 @@ watch(show, (newValue) => {
     startCounter();
   }
 })
-
-onMounted(() => {
-  console.log('onMounted')
-  startCounter()
-})
-
-onUpdated(() => {
-  console.log('onUpdated')
-  // startCounter()
-})
-onRenderTracked(() => {
-  console.log('onRenderTracked')
-  // startCounter()
-})
-onActivated(() => {
-  console.log('onActivated')
-})
-
 
 function startCounter() {
   const intervalId = setInterval(() => {
