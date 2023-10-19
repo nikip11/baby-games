@@ -1,26 +1,25 @@
 <template>
-  <div id="step-2" class="step" v-if="show">
+  <div id="step-2" class="step" v-if="props.show">
     <h1 v-if="count === 3">Preparados</h1>
     <h1 v-if="count === 2">Listos</h1>
     <h1 v-if="count === 1">Ya</h1>
     <h1>{{ count }}</h1>
-    <button @click="startCounter" v-if="count !== 3">si</button>
+    <button @click="startCounter">si</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, toRefs, watch } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps<{show: boolean}>()
-const { show } = toRefs({show: props.show})
 
 const emit = defineEmits(['next'])
 const count = ref(3)
 
-watch(show, (newValue) => {
+watch(props, (newValue) => {
+  console.log(props)
   if (newValue) {
     count.value = 3;
-    startCounter();
   }
 })
 
