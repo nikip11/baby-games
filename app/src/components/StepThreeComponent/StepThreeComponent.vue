@@ -37,12 +37,12 @@ function getNext() {
 function getPrev() {
   image.value  = null
   delay(() => {
-    index.value = index.value === 0 ? shuffledAnimals.value.length : index.value - 1
+    index.value = index.value === 0 ? shuffledAnimals.value.length - 1 : index.value - 1
     image.value = shuffledAnimals.value[index.value]
   })
 }
 
-function delay(callback: () => void, time: number = 500) {
+function delay(callback: () => void, time: number = 750) {
   setTimeout(() => {
     callback()
   }, time)
