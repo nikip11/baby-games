@@ -14,7 +14,6 @@
 <script setup lang="ts">
 type Props = {
   icon: 'home' | 'arrowLeft' | 'arrowRight' | 'loading'
-  // icon: string
   size: 'x2' | 'x3' | 'x4' | 'x5'
 }
 

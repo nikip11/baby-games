@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import StepOneComponent from './components/StepOneComponent.vue'
-import StepTwoComponent from './components/StepTwoComponent.vue'
-import StepThreeComponent from './components/StepThreeComponent/StepThreeComponent.vue'
 import { ref } from 'vue'
-import DotsComponents from './components/DotsComponents.vue';
+import StepOneComponent from '@/components/StepOneComponent.vue'
+import StepTwoComponent from '@/components/StepTwoComponent.vue'
+import StepThreeComponent from '@/components/StepThreeComponent/StepThreeComponent.vue'
+import DotsComponents from '@/components/DotsComponents.vue';
 
 const step = ref<number>(1)
 
@@ -15,6 +15,7 @@ function nextStep(value: number): void {
 
 <template>
   <div class="flex">
+    <div id="r"></div>
     <DotsComponents />
     <StepOneComponent :show="step === 1" @start="() => nextStep(2)" />
     <StepTwoComponent :show="step === 2" @next="() => nextStep(3)" @back="() => nextStep(1)" />

@@ -80,10 +80,6 @@ button:hover {
   box-shadow: 0px 0px 0px 0px var(--white); */
 
 }
-button:focus,
-button:focus-visible {
-}
-
 
 #app {
   max-width: 1280px;
@@ -102,4 +98,50 @@ button:focus-visible {
   overflow: hidden;
   max-width: 100%;
   padding: 0px 25px;
+}
+#r {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  /* background-color: red; */
+}
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) 
+and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+ #r {
+  background-color: purple;
+  display: none;
+ }
+}
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) 
+and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+ #r {
+  background-color: aquamarine;
+  display: none;
+ }
+}
+
+/* 1284×2778 pixels at 460ppi */
+
+/* and (-webkit-device-pixel-ratio: 3)  */
+@media only screen 
+    and (min-device-width: 428px)
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) {
+  #app {
+    max-width: 100%;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  .step {
+    width: 430px;
+  }
+  button {
+    font-size: 1.2em;
+  }
 }

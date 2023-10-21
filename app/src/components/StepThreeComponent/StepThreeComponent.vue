@@ -13,11 +13,11 @@
   
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Animal } from '../../types';
-import animals from '../../assets/animals.json'
-import { shuffleArray } from '../../helpers/array.ts'
+import { Animal } from '@/types';
+import animals from '@/assets/animals.json'
+import { shuffleArray } from '@/helpers/array.ts'
 import ImageComponent from './ImageComponent.vue';
-import IconComponent from '../IconComponent.vue'
+import IconComponent from '@/components/IconComponent.vue'
 
 defineProps<{show: boolean}>()
 
@@ -65,6 +65,23 @@ function delay(callback: () => void, time: number = 750) {
   justify-content: space-between;
   gap: 30px;
   margin: 30px 0px;
+}
+
+@media only screen 
+  and (min-device-width: 428px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: portrait) {
+  .step .buttons {
+    gap: 10px;
+  }
+}
+@media only screen 
+  and (min-device-width: 428px)
+  and (-webkit-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+  .step .buttons {
+    margin: 10px 0px;
+  }
 }
 </style>
   
