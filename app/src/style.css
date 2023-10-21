@@ -1,3 +1,14 @@
+/* 
+font: cosmic octo
+font secundary: retropix
+font: open sans extra bold
+font Arcade gamer
+
+background: #190D25
+primary: #641466
+secundary: #421570
+*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Titan+One&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,9 +23,12 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   --black: #333333;
-  --white: #f1f1f1;
-  --primary: #646cff;
-  background-color: var(--primary);
+  --dark: #190D25;
+  --white: #ffffff;
+  --primary: #641466;
+  --secundary: #421570;
+  background-color: var(--dark);
+  --open-sans: 'Open Sans', sans-serif;
 }
 
 a {
@@ -37,26 +51,37 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Titan One', sans-serif;
+  text-transform: uppercase;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  /* background-color: #1a1a1a; */
-  cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: var(--primary);
+  color: var(--white);
+  fill: var(--white);
+  border: 0;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 2em;
   text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-box-shadow: 5px 7px 0px 3px var(--secundary);
+  box-shadow: 5px 7px 0px 3px var(--secundary);
+  transition: all 200ms linear;
+  cursor: pointer;
 }
 button:hover {
-  border-color: #646cff;
+  color: var(--dark);
+  fill: var(--dark);
+  background-color: var(--white);
+  /* -webkit-box-shadow: 5px 7px 0px 3px var(--secundary); */
+  /* box-shadow: 5px 7px 0px 3px var(--secundary); */
+  /* -webkit-box-shadow: 0px 0px 0px 0px var(--white);
+  box-shadow: 0px 0px 0px 0px var(--white); */
+
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 
@@ -69,10 +94,12 @@ button:focus-visible {
 
 .step {
   height: 100vh;
+  width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  max-width: 100%;
+  padding: 0px 25px;
 }
-

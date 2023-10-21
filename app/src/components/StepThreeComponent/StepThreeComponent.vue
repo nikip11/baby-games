@@ -1,10 +1,12 @@
 <template>
 
   <div id="step-3" class="step" v-if="show">
-    <button id="home-button" @click="$emit('back')">Inicio</button>
-    <button id="back-button" @click="getPrev">Anterior</button>
     <ImageComponent :image="image" />
-    <button id="next-button" @click="getNext">Siguiente</button>
+    <div class="buttons">
+      <button @click="getPrev"> <IconComponent icon="arrowLeft" size="x3"/> Prev</button>
+      <button @click="$emit('back')"><IconComponent icon="home" size="x2"/></button>
+      <button @click="getNext">Next <IconComponent icon="arrowRight" size="x3"/></button>
+    </div>
   </div>
   
 </template>
@@ -15,6 +17,7 @@ import { Animal } from '../../types';
 import animals from '../../assets/animals.json'
 import { shuffleArray } from '../../helpers/array.ts'
 import ImageComponent from './ImageComponent.vue';
+import IconComponent from '../IconComponent.vue'
 
 defineProps<{show: boolean}>()
 
@@ -49,34 +52,19 @@ function delay(callback: () => void, time: number = 500) {
 
 <style scoped>
 #step-3 {
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
 
-#step-3 > div {
-  overflow: hidden;
-  max-width:fit-content;
-  width: 100%;
-  height: 100%;
-}
-
-.step  > #next-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-}
-
-.step > #back-button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-.step > #home-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.step .buttons {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 30px 0px;
 }
 </style>
   
